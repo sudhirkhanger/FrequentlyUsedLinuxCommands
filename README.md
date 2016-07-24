@@ -13,3 +13,10 @@ These are some of my frequently used Fedora package management commands.
 
     sudo dnf repo-pkgs repo-name list installed
 
+## DNF history commands
+
+    sudo dnf history
+    sudo dnf history info #
+    sudo dnf history undo last
+    sudo dnf history redo #
+	
