@@ -20,3 +20,10 @@ These are some of my frequently used Fedora package management commands.
     sudo dnf history undo last
     sudo dnf history redo #
 	
+## Import signing key
+
+    sudo rpm --import package-signing-key.pub
+
+## Downgreade a pacakge
+
+    sudo dnf --allowerasing downgrade package-name
