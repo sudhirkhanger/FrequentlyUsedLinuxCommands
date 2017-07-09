@@ -27,3 +27,11 @@ These are some of my frequently used Fedora package management commands.
 ## Downgreade a pacakge
 
     sudo dnf --allowerasing downgrade package-name
+
+## How to terminate a frozen ssh connection.
+
+	$ Enter
+	$ ~
+	$ .
+	
+[Properly close a frozen SSH session](https://infertux.com/posts/2012/12/20/properly-close-a-frozen-ssh-session/)
