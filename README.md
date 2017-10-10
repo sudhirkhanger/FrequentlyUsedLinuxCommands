@@ -35,3 +35,10 @@ These are some of my frequently used Fedora package management commands.
 	$ .
 	
 [Properly close a frozen SSH session](https://infertux.com/posts/2012/12/20/properly-close-a-frozen-ssh-session/)
+
+## Convert a webm file to gif
+
+    ffmpeg -i input.webm -pix_fmt rgb24 output.gif
+
+[How to do I convert an webm (video) to a (animated) gif on the command line?](https://askubuntu.com/a/506672/106123)
+
