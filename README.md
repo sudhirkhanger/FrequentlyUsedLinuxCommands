@@ -42,3 +42,8 @@ These are some of my frequently used Fedora package management commands.
 
 [How to do I convert an webm (video) to a (animated) gif on the command line?](https://askubuntu.com/a/506672/106123)
 
+
+## Delete history
+
+    history -c #clear all history
+	history -d lineNumbe # clear the history lineNumber item
