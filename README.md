@@ -1,4 +1,4 @@
-# FrequentlyUsedDnfCommands
+# frequentlyuseddnfcommands
 These are some of my frequently used Fedora package management commands.
 
 ## List all repository
@@ -47,3 +47,11 @@ These are some of my frequently used Fedora package management commands.
 
     history -c #clear all history
 	history -d lineNumbe # clear the history lineNumber item
+
+## Restart kwin
+
+    kwin_x11 --replace &
+	
+## Restart Plasmashell
+
+    killall -s SIGSEGV plasmashell
