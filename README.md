@@ -12,6 +12,11 @@ These are some of my frequently used Fedora package management commands.
 ## List all packages installed from a repository
 
     sudo dnf repo-pkgs repo-name list installed
+	
+## List installed packages
+
+	sudo dnf list installed
+	sudo dnf list installed | grep -ie package-name
 
 ## DNF history commands
 
@@ -55,3 +60,10 @@ These are some of my frequently used Fedora package management commands.
 ## Restart Plasmashell
 
     killall -s SIGSEGV plasmashell
+
+## Mount Android devices using simple-mtpfs
+
+	simple-mtpfs mountpoint [options]
+	simple-mtpfs --device <number> mountpoint [options]
+	simple-mtpfs --list-devices
+	fusermount -u mountpoint
