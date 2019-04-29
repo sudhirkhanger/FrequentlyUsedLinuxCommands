@@ -67,3 +67,9 @@ These are some of my frequently used Fedora package management commands.
 	simple-mtpfs --device <number> mountpoint [options]
 	simple-mtpfs --list-devices
 	fusermount -u mountpoint
+
+## Resize Images
+
+	mogrify -resize 1222x2444 -quality 100 -path /path/to/converted *.png # maintains aspect ratio
+	mogrify -resize 800x1094! *jpg #doesn't maintain aspect ratio
+	
