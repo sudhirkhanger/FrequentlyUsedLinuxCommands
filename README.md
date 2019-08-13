@@ -1,4 +1,4 @@
-# frequentlyuseddnfcommands
+# Frequently Used Linux Commands
 These are some of my frequently used Fedora package management commands.
 
 ## List all repository
@@ -78,6 +78,7 @@ These are some of my frequently used Fedora package management commands.
 	flatpak list
 	flatpak update
 	flatpak search package name
+	flatpak uninstall APPLICATION_ID
 	
 ## Snap
 
