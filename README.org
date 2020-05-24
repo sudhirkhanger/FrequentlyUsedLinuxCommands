@@ -85,3 +85,13 @@ These are some of my frequently used Fedora package management commands.
 	snap list
 	sudo snap refresh
 	snap find "package name"
+
+* FFMPG
+  * Speed up a video file.
+  
+	  ffmpeg -i input.webm -filter:v "setpts=0.25*PTS" output.webm
+	  
+* Fetch files from server
+
+	scp username@ip-address:/path/to/file.org ~/path/to/output/folder/
+	
