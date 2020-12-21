@@ -97,10 +97,13 @@
 
 * Flatpak
 
-  flatpak list
-  flatpak update
-  flatpak search package name
-  flatpak uninstall APPLICATION_ID
+#+begin_src sh
+flatpak list
+flatpak update
+flatpak search package name
+flatpak uninstall APPLICATION_ID
+flatpak uninstall --unused
+#+end_src
 	
 * Snap
 
