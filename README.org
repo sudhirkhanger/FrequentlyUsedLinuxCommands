@@ -1,125 +1,147 @@
+* Frequently Used Linux Commands
+** List all repository
 
-# Frequently Used Linux Commands
+   dnf repolist
+   
+** List all packages in a repository
 
-* List all repository
+   sudo dnf repository-packages repo-name list
 
-  dnf repolist
+** List all packages installed from a repository
 
-* List all packages in a repository
-
-  sudo dnf repository-packages repo-name list
-
-* List all packages installed from a repository
-
-  sudo dnf repo-pkgs repo-name list installed
+   sudo dnf repo-pkgs repo-name list installed
 	
-* List installed packages
+** List installed packages
 
-  sudo dnf list installed
-  sudo dnf list installed | grep -ie package-name
+   sudo dnf list installed
+   sudo dnf list installed | grep -ie package-name
 
-* DNF history commands
+** DNF history commands
 
-  sudo dnf history
-  sudo dnf history info #
-  sudo dnf history undo last
-  sudo dnf history redo #
+   sudo dnf history
+   sudo dnf history info #
+   sudo dnf history undo last
+   sudo dnf history redo #
 	
-* Import signing key
+** Import signing key
 
-  sudo rpm --import package-signing-key.pub
+   sudo rpm --import package-signing-key.pub
 
-* Downgrade a package
+** Downgrade a package
 
-  sudo dnf --allowerasing downgrade package-name
+   sudo dnf --allowerasing downgrade package-name
     
-* Remove, enable, disable, and remove a repo
+** Remove, enable, disable, and remove a repo
     
-  dnf config-manager --add-repo http://www.example.com/example.repo
-  dnf config-manager --set-enabled repository
-  dnf config-manager --set-disabled repository
-  rm /etc/yum.repos.d/vscode.repo
+   dnf config-manager --add-repo http://www.example.com/example.repo
+   dnf config-manager --set-enabled repository
+   dnf config-manager --set-disabled repository
+   rm /etc/yum.repos.d/vscode.repo
 
-* How to terminate a frozen ssh connection.
+** How to terminate a frozen ssh connection.
 
-  $ Enter
-  $ ~
-  $ .
+   $ Enter
+   $ ~
+   $ .
 	
-[Properly close a frozen SSH session](https://infertux.com/posts/2012/12/20/properly-close-a-frozen-ssh-session/)
+ [Properly close a frozen SSH session](https://infertux.com/posts/2012/12/20/properly-close-a-frozen-ssh-session/)
 
-* Multimedia
+** Multimedia
 
-** Convert a webm file to gif
+- time stamp = hh:mm:ss
 
-   ffmpeg -i input.webm -pix_fmt rgb24 output.gif
-
-** webm to mp4
-
-   ffmpeg -fflags +genpts -i 1.webm -r 24 1.mp4
-
-** Speed up a video file.
-  
-   ffmpeg -i input.webm -filter:v "setpts=0.25*PTS" output.webm
-
-** Resize Images
-
-  mogrify -resize 1222x2444 -quality 100 -path /path/to/converted *.png # maintains aspect ratio
-  mogrify -resize 800x1094! *jpg #doesn't maintain aspect ratio
-	
-** Convert Images to PDF
-
-  convert image1.jpg image2.png image3.bmp output.pdf //uses ImageMagick
-
-* Delete history
-
-  history -c #clear all history
-  history -d lineNumbe # clear the history lineNumber item
-
-* Restart kwin
-
-  kwin_x11 --replace &
-	
-* Restart Plasmashell
-
-  killall -s SIGSEGV plasmashell
-    
-* Restart PulseAudio
-
-  pulseaudio -k
-
-* Mount Android devices using simple-mtpfs
-
-  simple-mtpfs mountpoint [options]
-  simple-mtpfs --device <number> mountpoint [options]
-  simple-mtpfs --list-devices
-  fusermount -u mountpoint
-
-* Flatpak
+*** Convert a webm file to gif
 
 #+begin_src sh
-flatpak list
-flatpak update
-flatpak search package name
-flatpak uninstall APPLICATION_ID
-flatpak uninstall --unused
+ffmpeg -i input.webm -pix_fmt rgb24 output.gif
+#+end_src
+
+*** Convert webm to mp4
+
+#+begin_src sh
+ffmpeg -fflags +genpts -i 1.webm -r 24 1.mp4
+#+end_src
+
+*** Cut video
+
+-i input
+-ss seek or will be cut from here
+-t duration
+-to to timestamp
+-c copy without re-encoding
+
+#+begin_src sh
+ffmpeg -i input.mp4 -ss 00:00:05 -t 00:00:10 cut.mp4
+#+end_src
+
+*** Speed up a video file.
+
+#+begin_src sh
+ffmpeg -i input.webm -filter:v "setpts=0.25*PTS" output.webm
+#+end_src
+
+*** Resize Images
+
+#+begin_src sh
+mogrify -resize 1222x2444 -quality 100 -path /path/to/converted *.png # maintains aspect ratio
+mogrify -resize 800x1094! *jpg #doesn't maintain aspect ratio
 #+end_src
 	
-* Snap
+*** Convert Images to PDF
 
-  snap list
-  sudo snap refresh
-  snap find "package name"
+#+begin_src sh
+convert image1.jpg image2.png image3.bmp output.pdf //uses ImageMagick
+#+end_src
 
-* Fetch files from server
+** Delete history
 
-  scp username@ip-address:/path/to/file.org ~/path/to/output/folder/
+   history -c #clear all history
+   history -d lineNumbe # clear the history lineNumber item
 
-* Qt Maintenance Tool
+** Restart kwin
 
-#+BEGIN_SRC sh
-MaintenanceTool --help
-MaintenanceTool list
-MaintenanceTool check-updates
-MaintenanceTool update
-#+END_SRC
+   kwin_x11 --replace &
+	
+** Restart Plasmashell
+
+   killall -s SIGSEGV plasmashell
+    
+** Restart PulseAudio
+
+   pulseaudio -k
+
+** Mount Android devices using simple-mtpfs
+
+   simple-mtpfs mountpoint [options]
+   simple-mtpfs --device <number> mountpoint [options]
+   simple-mtpfs --list-devices
+   fusermount -u mountpoint
+
+** Flatpak
+
+ #+begin_src sh
+ flatpak list
+ flatpak update
+ flatpak search package name
+ flatpak uninstall APPLICATION_ID
+ flatpak uninstall --unused
+ #+end_src
+	
+** Snap
+
+   snap list
+   sudo snap refresh
+   snap find "package name"
+
+** Fetch files from server
+
+   scp username@ip-address:/path/to/file.org ~/path/to/output/folder/
+
+** Qt Maintenance Tool
+
+ #+BEGIN_SRC sh
+ MaintenanceTool --help
+ MaintenanceTool list
+ MaintenanceTool check-updates
+ MaintenanceTool update
+ #+END_SRC
