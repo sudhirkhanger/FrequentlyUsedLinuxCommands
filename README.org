@@ -40,15 +40,15 @@
 
 ** How to terminate a frozen ssh connection.
 
-   $ Enter
-   $ ~
-   $ .
+#+begin_src 
+$ Enter
+$ ~
+$ .
+#+end_src
 	
- [Properly close a frozen SSH session](https://infertux.com/posts/2012/12/20/properly-close-a-frozen-ssh-session/)
+[Properly close a frozen SSH session](https://infertux.com/posts/2012/12/20/properly-close-a-frozen-ssh-session/)
 
 ** Multimedia
-
-- time stamp = hh:mm:ss
 
 *** Convert a webm file to gif
 
@@ -64,14 +64,14 @@ ffmpeg -fflags +genpts -i 1.webm -r 24 1.mp4
 
 *** Cut video
 
+#+begin_src sh
+ffmpeg -i input.mp4 -ss 00:00:05 -t 00:00:10 cut.mp4
+- time stamp = hh:mm:ss
 -i input
 -ss seek or will be cut from here
 -t duration
 -to to timestamp
 -c copy without re-encoding
-
-#+begin_src sh
-ffmpeg -i input.mp4 -ss 00:00:05 -t 00:00:10 cut.mp4
 #+end_src
 
 *** Speed up a video file.
@@ -95,53 +95,73 @@ convert image1.jpg image2.png image3.bmp output.pdf //uses ImageMagick
 
 ** Delete history
 
-   history -c #clear all history
-   history -d lineNumbe # clear the history lineNumber item
+#+begin_src sh
+history -c #clear all history
+history -d lineNumbe # clear the history lineNumber item
+#+end_src
 
 ** Restart kwin
 
-   kwin_x11 --replace &
+#+begin_src sh
+kwin_x11 --replace &
+#+end_src
 	
 ** Restart Plasmashell
 
-   killall -s SIGSEGV plasmashell
+#+begin_src sh
+killall -s SIGSEGV plasmashell
+#+end_src
     
 ** Restart PulseAudio
 
-   pulseaudio -k
+#+begin_src sh
+pulseaudio -k
+#+end_src
 
 ** Mount Android devices using simple-mtpfs
 
-   simple-mtpfs mountpoint [options]
-   simple-mtpfs --device <number> mountpoint [options]
-   simple-mtpfs --list-devices
-   fusermount -u mountpoint
+#+begin_src sh
+simple-mtpfs mountpoint [options]
+simple-mtpfs --device <number> mountpoint [options]
+simple-mtpfs --list-devices
+fusermount -u mountpoint
+#+end_src
 
 ** Flatpak
 
- #+begin_src sh
- flatpak list
- flatpak update
- flatpak search package name
- flatpak uninstall APPLICATION_ID
- flatpak uninstall --unused
- #+end_src
+#+begin_src sh
+flatpak list
+flatpak update
+flatpak search package name
+flatpak uninstall APPLICATION_ID
+flatpak uninstall --unused
+#+end_src
 	
 ** Snap
 
-   snap list
-   sudo snap refresh
-   snap find "package name"
+#+begin_src sh
+snap list
+sudo snap refresh
+snap find "package name"
+#+end_src
 
 ** Fetch files from server
 
-   scp username@ip-address:/path/to/file.org ~/path/to/output/folder/
+#+begin_src sh
+scp username@ip-address:/path/to/file.org ~/path/to/output/folder/
+#+end_src
 
 ** Qt Maintenance Tool
 
- #+BEGIN_SRC sh
- MaintenanceTool --help
- MaintenanceTool list
- MaintenanceTool check-updates
- MaintenanceTool update
- #+END_SRC
+#+BEGIN_SRC sh
+MaintenanceTool --help
+MaintenanceTool list
+MaintenanceTool check-updates
+MaintenanceTool update
+#+END_SRC
+
+** List Installed Packages
+
+#+begin_src sh
+apt list --installed | grep -ie package_name
+#+end_src
