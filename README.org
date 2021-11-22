@@ -1,4 +1,5 @@
 * Frequently Used Linux Commands
+
 ** List all repository
 
    dnf repolist
@@ -164,4 +165,17 @@ MaintenanceTool update
 
 #+begin_src sh
 apt list --installed | grep -ie package_name
+#+end_src
+
+** X Keyboard Extesion
+
+#+begin_src sh
+# Set ctrl option
+setxkbmap -option ctrl:nocaps
+# Reset all options
+setxkbmap -option
+# List all ctrl and caps options
+grep -E "(ctrl|caps):" /usr/share/X11/xkb/rules/base.lst
+# Print applied options
+setxkbmap -print
 #+end_src
