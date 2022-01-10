@@ -179,3 +179,13 @@ grep -E "(ctrl|caps):" /usr/share/X11/xkb/rules/base.lst
 # Print applied options
 setxkbmap -print
 #+end_src
+
+** SSH Agent
+
+#+begin_src sh
+eval $(ssh-agent)
+echo $SSH_AGENT_PID
+echo $SSH_ASKPASS
+ssh-add -l
+ssh-add ~/path/to/key </dev/null
+#+end_src
